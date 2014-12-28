@@ -34,17 +34,20 @@ var setKey = function(keyCode, value) {
     case 40:
         downArrow = value;
         break;
+    default:
+        return true;
     }
+    return false;
 };
 
 var keyDown = function(e) {
     e = e || window.event;
-    setKey(e.keyCode, true);
+    return setKey(e.keyCode, true);
 };
 
 var keyUp = function(e) {
     e = e || window.event;
-    setKey(e.keyCode, false);
+    return setKey(e.keyCode, false);
 }
 
 var tick = function() {
