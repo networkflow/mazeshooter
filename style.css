@@ -1,0 +1,13 @@
+/*
+ * Style.css
+ *
+ * David Wise
+ */
+
+* {
+  font-family: Helvetica, sans-serif;
+}
+
+h3 {
+  color: blue;
+}
