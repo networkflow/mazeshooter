@@ -9,8 +9,8 @@ var Ball = function(x, y) {
     this.y = y;
     this.vx = 0;
     this.vy = 0;
-    this.radius = ballRadius;
-    this.friction = ballFriction;
+    this.radius = globals.ballRadius;
+    this.friction = globals.ballFriction;
 };
 
 Ball.prototype.move = function() {
@@ -23,15 +23,15 @@ Ball.prototype.move = function() {
     if (this.x - this.radius < 0) {
 	this.x = -(this.x - this.radius) + this.radius;
 	this.vx = -this.vx;
-    } else if (this.x + this.radius > fieldWidth) {
-	this.x = fieldWidth - (this.x + this.radius - fieldWidth) - this.radius;
+    } else if (this.x + this.radius > globals.fieldWidth) {
+	this.x = globals.fieldWidth - (this.x + this.radius - globals.fieldWidth) - this.radius;
 	this.vx = -this.vx;
     }
     if (this.y - this.radius < 0) {
 	this.y = -(this.y - this.radius) + this.radius;
 	this.vy = -this.vy;
-    } else if (this.y + this.radius > fieldHeight) {
-	this.y = fieldHeight - (this.y + this.radius - fieldHeight) - this.radius;
+    } else if (this.y + this.radius > globals.fieldHeight) {
+	this.y = globals.fieldHeight - (this.y + this.radius - globals.fieldHeight) - this.radius;
 	this.vy = -this.vy;
     }
 };

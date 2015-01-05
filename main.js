@@ -11,14 +11,14 @@ var draw = function() {
 
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = bgColor;
+    ctx.fillStyle = globals.bgColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.setTransform(1, 0, 0, 1,
 		     canvas.width / 2 - playerBall.x,
 		     canvas.height / 2 - playerBall.y);
-    ctx.fillStyle = fieldColor;
-    ctx.fillRect(0, 0, fieldWidth, fieldHeight);
+    ctx.fillStyle = globals.fieldColor;
+    ctx.fillRect(0, 0, globals.fieldWidth, globals.fieldHeight);
     playerBall.draw(ctx);
 };
 
@@ -59,13 +59,13 @@ var tick = function() {
     if (rightArrow) { accx += 1; }
     if (downArrow) { accy += 1; }
     if (upArrow) { accy -= 1; }
-    if (Math.abs(accx) > EPS &&
-	Math.abs(accy) > EPS) {
+    if (Math.abs(accx) > globals.EPS &&
+	Math.abs(accy) > globals.EPS) {
 	accx *= Math.sqrt(2) / 2;
 	accy *= Math.sqrt(2) / 2;
     }
-    accx *= ballAcc;
-    accy *= ballAcc;
+    accx *= globals.ballAcc;
+    accy *= globals.ballAcc;
     playerBall.vx += accx;
     playerBall.vy += accy;
 
