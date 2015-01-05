@@ -4,14 +4,19 @@
  * David Wise
  */
 
-var EPS = 1e-8;
-var canvas = document.getElementById("game");
-var fieldWidth = 500;
-var fieldHeight = 500;
+(function(exports) {
 
-var bgColor = "#AAAAAA";
-var fieldColor = "#EEEEEE";
+exports.PORT = 13964;
 
-var ballAcc = 1.5;
-var ballRadius = 10;
-var ballFriction = 0.95;
+exports.EPS = 1e-8;
+exports.fieldWidth = 500;
+exports.fieldHeight = 500;
+
+exports.bgColor = "#AAAAAA";
+exports.fieldColor = "#EEEEEE";
+
+exports.ballAcc = 1.5;
+exports.ballRadius = 10;
+exports.ballFriction = 0.95;
+
+})(typeof exports === 'undefined' ? this.globals = {} : exports);

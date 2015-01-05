@@ -4,6 +4,8 @@
  * David Wise
  */
 
+var canvas = document.getElementById("game");
+
 var draw = function() {
     var ctx = canvas.getContext("2d");
 
