@@ -80,7 +80,7 @@ function(Ball, Globals) {
 	draw();
     };
 
-    var playerBall = new Ball(100, 100);
+    var playerBall = new Ball.Ball(100, 100);
 
     var leftArrow = false;
     var rightArrow = false;
