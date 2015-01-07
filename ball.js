@@ -4,7 +4,7 @@
  * David Wise
  */
 
-define(['Globals'], 
+define(['./globals'], 
 function(Globals) {
     var Ball = function(x, y) {
 	this.x = x;

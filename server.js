@@ -4,7 +4,7 @@
  * David Wise
  */
 
-requirejs(['dgram', './Globals.js'], 
+requirejs(['dgram', './globals.js'], 
 function(dgram, Globals) {
     var sock = dgram.createSocket('udp4');
     sock.on('listening', function () {
