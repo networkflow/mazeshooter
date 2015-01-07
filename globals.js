@@ -1,22 +1,30 @@
 /*
- * globals.js
+ * Globals.js
  *
  * David Wise
  */
 
-(function(exports) {
+define(function() {
+    return {
+	PORT: 13964, 
 
-exports.PORT = 13964;
+	EPS: 1e-8, 
+	fieldWidth: 500, 
+	fieldHeight: 500, 
+	
+	bgColor: "#AAAAAA", 
+	fieldColor: "#EEEEEE", 
 
-exports.EPS = 1e-8;
-exports.fieldWidth = 500;
-exports.fieldHeight = 500;
+	ballAcc: 1.5, 
+	ballRadius: 10, 
+	ballFriction: 0.95, 
 
-exports.bgColor = "#AAAAAA";
-exports.fieldColor = "#EEEEEE";
-
-exports.ballAcc = 1.5;
-exports.ballRadius = 10;
-exports.ballFriction = 0.95;
-
-})(typeof exports === 'undefined' ? this.globals = {} : exports);
+	/*
+	 * Returns a top-level variable or function given its identifier as a string.
+	 * Can be used to get a constructor for a class from a string.
+	 */
+	varFromString: function(s) {
+	    return (window || this)[s];
+	}
+    };
+});
