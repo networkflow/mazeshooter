@@ -4,8 +4,7 @@
  * David Wise
  */
 
-requirejs(['./ball.js', './globals.js'], 
-function(Ball, Globals) {
+requirejs(['./ball.js', './globals.js'], function(Ball, Globals) {
     var canvas = document.getElementById("game");
 
     var draw = function() {
@@ -20,7 +19,7 @@ function(Ball, Globals) {
 			 canvas.width / 2 - playerBall.x,
 			 canvas.height / 2 - playerBall.y);
 	ctx.fillStyle = Globals.fieldColor;
-	ctx.fillRect(0, 0, Globals.fieldWidth, globals.fieldHeight);
+	ctx.fillRect(0, 0, Globals.fieldWidth, Globals.fieldHeight);
 	playerBall.draw(ctx);
     };
 

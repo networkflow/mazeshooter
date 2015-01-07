@@ -26,14 +26,14 @@ function(Globals) {
 	    this.x = -(this.x - this.radius) + this.radius;
 	    this.vx = -this.vx;
 	} else if (this.x + this.radius > Globals.fieldWidth) {
-	    this.x = Globals.fieldWidth - (this.x + this.radius - globals.fieldWidth) - this.radius;
+	    this.x = Globals.fieldWidth - (this.x + this.radius - Globals.fieldWidth) - this.radius;
 	    this.vx = -this.vx;
 	}
 	if (this.y - this.radius < 0) {
 	    this.y = -(this.y - this.radius) + this.radius;
 	    this.vy = -this.vy;
 	} else if (this.y + this.radius > Globals.fieldHeight) {
-	    this.y = Globals.fieldHeight - (this.y + this.radius - globals.fieldHeight) - this.radius;
+	    this.y = Globals.fieldHeight - (this.y + this.radius - Globals.fieldHeight) - this.radius;
 	    this.vy = -this.vy;
 	}
     };
