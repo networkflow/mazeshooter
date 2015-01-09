@@ -4,7 +4,9 @@
  * David Wise
  */
 
-requirejs(['dgram', './ball.js', './globals.js', './message.js'], function(dgram, Ball, Globals, Message) {
+var dgram = require('dgram');
+
+requirejs(['./ball.js', './globals.js', './message.js'], function(Ball, Globals, Message) {
     var canvas = document.getElementById("game");
 
     var draw = function() {
