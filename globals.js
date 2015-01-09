@@ -6,6 +6,7 @@
 
 define(function() {
     return {
+	SERVER: '10.0.0.16', 
 	PORT: 13964, 
 
 	EPS: 1e-8, 

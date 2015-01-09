@@ -4,7 +4,7 @@
  * David Wise
  */
 
-requirejs(['./ball.js', './globals.js'], function(Ball, Globals) {
+requirejs(['dgram', './ball.js', './globals.js', './message.js'], function(dgram, Ball, Globals, Message) {
     var canvas = document.getElementById("game");
 
     var draw = function() {
@@ -54,7 +54,16 @@ requirejs(['./ball.js', './globals.js'], function(Ball, Globals) {
     };
 
     window.onload = function(e) {
+	var message = new ConnectMessage(964);
+	var buf = new Buffer(Message.serialize(message));
 
+	var sock = dgram.createSocket('udp4');
+	sock.send(buf, 0, buf.length, Globals.PORT, Globals.SERVER, function(error, bytes) {
+	    if (error)
+		throw error;
+	    console.log("Sent message: '" + bytes + "'!");
+	    sock.close()
+	});
     };
 
     var tick = function() {
